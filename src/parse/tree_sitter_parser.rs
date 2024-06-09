@@ -1637,6 +1637,10 @@ fn syntax_from_cursor<'a>(
         );
     }
 
+    if node.kind() == "import_statement" {
+        return None;
+    }
+
     if node.is_error() {
         *error_count += 1;
     }
